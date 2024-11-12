@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.book">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <supports-screens android:largeScreens="true" android:anyDensity="true"/>
+
+    <application
+        android:name="com.example.book.api.GlobalApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Book"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- 메인 액티비티 설정 -->
+        <activity
+            android:name=".IntroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 카카오 인증 콜백 처리 액티비티 설정 -->
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="522a35fb9f2bd40c1207f9e955f2f3b9"
+                    android:host="oauth" />
+            </intent-filter>
+        </activity>
+
+        <!-- PDF FileProvider 설정 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- 기타 액티비티들 -->
+        <activity android:name=".users.login"/>
+        <activity android:name=".users.RegisterActivity"/>
+        <activity android:name=".categori.cate1"/>
+        <activity android:name=".categori.cate2"/>
+        <activity android:name=".categori.cate3"/>
+        <activity android:name=".categori.cate4"/>
+        <activity android:name=".categori.cate5"/>
+        <activity android:name=".categori.cate6"/>
+        <activity android:name=".categori.cate7"/>
+        <activity android:name=".categori.cate8"/>
+        <activity android:name=".categori.cate9"/>
+        <activity android:name=".categori.cate10"/>
+        <activity android:name=".categori.cate11"/>
+        <activity android:name=".search"/>
+        <activity android:name=".search_Result"/>
+        <activity android:name=".jjim.jjim"/>
+        <activity android:name=".HomeActivity"/>
+        <activity android:name=".book_write.book_write_main"/>
+        <activity android:name=".book_write.ModifyMyData"/>
+        <activity android:name=".book_write.ShowMyData"/>
+        <activity android:name=".book_write.WriteDiaryActivity"/>
+        <activity android:name=".mypage.Edit_userActivity" android:exported="true"/>
+        <activity android:name=".mypage.serjung" android:exported="true"/>
+        <activity android:name=".mypage.ChatBOT" android:exported="true"/>
+        <activity android:name=".mypage.gogaksenter" android:exported="true"/>
+        <activity android:name=".mypage.Sangdam1n1" android:exported="true"/>
+        <activity android:name=".mypage.Sangdam" android:exported="true"/>
+        <activity android:name=".mypage.Naeyoung" android:exported="true"/>
+        <activity android:name=".mypage.QA" android:exported="true"/>
+        <activity android:name=".mypage.QA_In" android:exported="true"/>
+        <activity android:name=".mypage.mypage" android:exported="true"/>
+        <activity android:name=".bookinfo.book_info"/>
+        <activity android:name=".bookinfo.book_info1"/>
+        <activity android:name=".bookinfo.book_info2"/>
+        <activity android:name=".bookinfo.book_info3"/>
+        <activity android:name=".api.GlobalApplication"/>
+    </application>
+</manifest>

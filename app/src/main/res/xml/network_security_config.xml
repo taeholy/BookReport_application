@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">192.168.226.194</domain>
+        <domain includeSubdomains="true">10.0.0.115</domain>
+        <domain includeSubdomains="true">192.168.104.10</domain>
+        <domain includeSubdomains="true">192.168.33.198</domain>
+
+<!--        ipconfig로 ip 확인해서 매번 변경-->
+        <domain includeSubdomains="true">sample.com</domain>
+    </domain-config>
+</network-security-config>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="bar1">카테고리</string>
+    <string name="bar2">독후감</string>
+    <string name="bar3">홈</string>
+    <string name="bar4">찜</string>
+    <string name="bar5">내정보</string>
+    <string name="mcontent">독후감 쓰기</string>
+    <string name="your_image_desc">설명 이미지</string>
+    <!--  TODO: Remove or change this placeholder text  -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- 기존 문자열 리소스가 있다면 아래에 추가 -->
+    <!-- 예: -->
+    <string name="app_name">Book</string>
+</resources>
