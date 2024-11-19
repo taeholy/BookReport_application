@@ -19,6 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.EditText;
+import android.widget.RatingBar;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,6 +50,8 @@ public class book_info extends AppCompatActivity {
     private ImageView imageView;
     private String bookId;
     private ImageButton heartButton;
+    private float rate;
+    private EditText reviewEditText;
 
     public static class ImageLoader {
         public static void load(final String url, final ImageView view) {
@@ -74,6 +78,9 @@ public class book_info extends AppCompatActivity {
 
         imageView = findViewById(R.id.book_img);
         heartButton = findViewById(R.id.heart_button);
+        reviewEditText = findViewById(R.id.reviewEdit);
+        Button okButton = findViewById(R.id.okButton);
+        RatingBar reviewRating = findViewById(R.id.reviewRating);
 
         Intent intent = getIntent();
         bookId = intent.getStringExtra("BOOK_ID");
@@ -103,7 +110,25 @@ public class book_info extends AppCompatActivity {
         });
 
         // PDF Viewer triggered by ImageView click
-        imageView.setOnClickListener(v -> openPdfViewer(bookId+".pdf"));
+        imageView.setOnClickListener(v -> openPdfViewer(bookId + ".pdf"));
+
+
+        // RatingBar 변경 시 평점 값 저장
+        reviewRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                rate = rating;
+            }
+        });
+
+        // 확인 버튼 클릭 시 동작
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(book_info.this, "리뷰가 제출되었습니다.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
     }
 
     private void openPdfViewer(String fileName) {
@@ -125,25 +150,20 @@ public class book_info extends AppCompatActivity {
             Toast.makeText(this, "Error opening PDF", Toast.LENGTH_SHORT).show();
         }
     }
+
     private void showPopupWindow(View anchorView, String message) {
-        // 팝업 윈도우 레이아웃 설정
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.popup_layout, null);
 
-        // 팝업 윈도우 텍스트 설정
         TextView messageTextView = popupView.findViewById(R.id.popup_text);
         messageTextView.setText(message);
 
-        // 팝업 윈도우 생성
         int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true; // 팝업 윈도우 외부 클릭 시 닫히게 설정
+        boolean focusable = true;
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
-        // 팝업 윈도우 배경 설정
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-
-        // 팝업 윈도우 위치 설정
         popupWindow.showAsDropDown(anchorView, 0, 0, Gravity.END);
     }
 
@@ -173,7 +193,7 @@ public class book_info extends AppCompatActivity {
                     isHeartFilled = !isHeartFilled;
                     heartButton.setImageResource(isHeartFilled ? R.drawable.heert : R.drawable.heart);
                     updateJjimStatus(isHeartFilled ? 1 : 0);
-                    sendRefreshRequestToJjim();  // jjim 페이지에 새로고침 요청
+                    sendRefreshRequestToJjim();
                 })
                 .setNegativeButton("No", null)
                 .show();
@@ -181,7 +201,7 @@ public class book_info extends AppCompatActivity {
 
     private void sendRefreshRequestToJjim() {
         Intent intent = new Intent("REFRESH_JJIM");
-        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);  // 브로드캐스트 송신
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
     private void updateJjimStatus(int status) {
@@ -231,7 +251,7 @@ public class book_info extends AppCompatActivity {
             if (result != null && result.equals("Success")) {
                 Toast.makeText(book_info.this, "찜 상태 변경 완료", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(book_info.this, "Error updating jjim status", Toast.LENGTH_SHORT).show();
+                Toast.makeText(book_info.this, "찜 상태 변경 중 오류 발생", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -291,10 +311,10 @@ public class book_info extends AppCompatActivity {
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(book_info.this, "Error parsing book details.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(book_info.this, "책 정보 파싱 중 오류 발생.", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(book_info.this, "No book details received.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(book_info.this, "책 정보를 받아오지 못했습니다.", Toast.LENGTH_SHORT).show();
             }
         }
     }

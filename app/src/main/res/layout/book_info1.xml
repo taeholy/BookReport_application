@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/back_button"
+        android:id="@+id/back_botton"
         android:layout_width="31dp"
         android:layout_height="39dp"
         android:background="@drawable/back_icon"
