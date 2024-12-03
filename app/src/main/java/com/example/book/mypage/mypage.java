@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;  // EditText를 사용하기 위해 추가
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.text.Editable;
+import android.text.TextWatcher;  // TextWatcher를 사용하기 위해 추가
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,7 +34,7 @@ public class mypage extends AppCompatActivity {
         setContentView(R.layout.mypage);
 
         // 로그아웃 버튼 설정
-       Button logoutButton = findViewById(R.id.logoutbutton);
+        Button logoutButton = findViewById(R.id.logoutbutton);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +82,32 @@ public class mypage extends AppCompatActivity {
         String userName = sharedPref.getString("userName", "No user ID");
         TextView myID = findViewById(R.id.myid);
         myID.setText(userName);
+
+        // 한 줄 소개 가져오기 및 설정 - 수정된 부분
+        EditText myIntro = findViewById(R.id.myintro);  // myintro EditText로 변경
+        String userIntro = sharedPref.getString("userIntro", "주로 소설을 읽어요~!");
+        myIntro.setText(userIntro);  // 저장된 한 줄 소개 설정
+
+        // TextWatcher를 통해 자동 저장 기능 구현 - 수정된 부분
+        myIntro.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // 입력 전에 호출됨 (사용하지 않음)
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // 사용자가 텍스트를 입력할 때마다 호출
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString("userIntro", s.toString());  // 입력된 값을 SharedPreferences에 저장
+                editor.apply();  // 즉시 저장
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // 입력이 끝난 후 호출됨 (사용하지 않음)
+            }
+        });
 
         // Window Insets 설정
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
