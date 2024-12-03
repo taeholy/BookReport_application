@@ -3,17 +3,26 @@ package com.example.book.bookinfo;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import com.example.book.R;
 import com.example.book.book_write.WriteDiaryActivity;
@@ -23,7 +32,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStreamReader;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
@@ -70,6 +82,11 @@ public class book_info extends AppCompatActivity {
             new FetchBookDetailsTask().execute(bookId);
         }
 
+        ImageButton icN1Button = findViewById(R.id.ic_n1);
+        icN1Button.setOnClickListener(v -> {
+            showPopupWindow(v, "책을 누르면 PDF 뷰어로 이동합니다.");
+        });
+
         heartButton.setOnClickListener(v -> showJjimConfirmationDialog());
 
         ImageButton backButton = findViewById(R.id.back_botton);
@@ -98,6 +115,75 @@ public class book_info extends AppCompatActivity {
             intent2.putExtra("BOOK_IMAGE_URL", bookImageUrl); // 동적 URL 전달
             startActivity(intent2);
         });
+
+// 이미지뷰 클릭 시 PDF 열기
+        imageView.setOnClickListener(v -> {
+            if (bookId != null && !bookId.isEmpty()) {
+                // book_id를 기반으로 PDF 파일 이름 생성
+                String pdfFileName = bookId + ".pdf";
+                openPdfViewer(pdfFileName);
+            } else {
+                Toast.makeText(this, "책 ID가 유효하지 않습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+
+    private void openPdfViewer(String fileName) {
+        try {
+            File pdfFile = getFileFromAssets(fileName);
+            Uri pdfUri = FileProvider.getUriForFile(this, getPackageName() + ".provider", pdfFile);
+
+            Log.d("PDF_VIEWER", "PDF Uri: " + pdfUri.toString());
+
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(pdfUri, "application/pdf");
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "PDF 파일을 열 수 없습니다.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void showPopupWindow(View anchorView, String message) {
+        // 팝업 윈도우 레이아웃 설정
+        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.popup_layout, null);
+
+        // 팝업 윈도우 텍스트 설정
+        TextView messageTextView = popupView.findViewById(R.id.popup_text);
+        messageTextView.setText(message);
+
+        // 팝업 윈도우 생성
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true; // 팝업 윈도우 외부 클릭 시 닫히게 설정
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        // 팝업 윈도우 배경 설정
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+        // 팝업 윈도우 위치 설정
+        popupWindow.showAsDropDown(anchorView, 0, 0, Gravity.END);
+    }
+
+    private File getFileFromAssets(String fileName) throws Exception {
+        InputStream inputStream = getAssets().open(fileName);
+        File outFile = new File(getCacheDir(), fileName);
+        FileOutputStream outputStream = new FileOutputStream(outFile);
+
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = inputStream.read(buffer)) > 0) {
+            outputStream.write(buffer, 0, length);
+        }
+
+        outputStream.close();
+        inputStream.close();
+
+        return outFile;
     }
 
     private void showJjimConfirmationDialog() {
