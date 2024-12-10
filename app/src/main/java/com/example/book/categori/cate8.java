@@ -33,7 +33,7 @@ import java.util.concurrent.Executors;
 
 public class cate8 extends AppCompatActivity {
 
-    private static final String PHP_SCRIPT_URL = "http://192.168.33.198/cate8.php";
+    private static final String PHP_SCRIPT_URL = "http://192.168.33.224/cate8.php";
     private TextView recodeview1, recodeview2, recodeview3, recodeview4, recodeview5, recodeview6
             ,recodeview7, recodeview8, recodeview9, recodeview10, recodeview11, recodeview12
             ,recodeview13, recodeview14, recodeview15, recodeview16, recodeview17, recodeview18

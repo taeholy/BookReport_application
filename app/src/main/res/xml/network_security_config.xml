@@ -5,7 +5,7 @@
         <domain includeSubdomains="true">192.168.226.194</domain>
         <domain includeSubdomains="true">10.0.0.115</domain>
         <domain includeSubdomains="true">192.168.104.10</domain>
-        <domain includeSubdomains="true">192.168.33.198</domain>
+        <domain includeSubdomains="true">192.168.33.224</domain>
 
 <!--        ipconfig로 ip 확인해서 매번 변경-->
         <domain includeSubdomains="true">sample.com</domain>

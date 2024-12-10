@@ -2,11 +2,37 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
+
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
 
+
+    <View
+        android:id="@+id/highbar"
+        android:layout_width="412dp"
+        android:layout_height="75dp"
+        android:background="#f4EEDD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="찜 목록"
+        android:textColor="@android:color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033" />
 
     <View
         android:id="@+id/view"
@@ -18,16 +44,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageButton
         android:id="@+id/image4"
         android:layout_width="120dp"
         android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintHorizontal_bias="0.807"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689"
+        app:layout_constraintVertical_bias="0.688"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
@@ -48,7 +75,7 @@
         android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintHorizontal_bias="0.807"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.244"
@@ -72,6 +99,7 @@
         android:layout_height="wrap_content"
         android:text="책 제목"
         android:textSize="20dp"
+        android:layout_gravity="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.671"
@@ -85,12 +113,13 @@
         android:layout_height="wrap_content"
         android:text="책 제목"
         android:textSize="20dp"
+        android:layout_gravity="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785" />
+        app:layout_constraintVertical_bias="0.784" />
 
     <TextView
         android:id="@+id/bookname4"
@@ -98,12 +127,17 @@
         android:layout_height="wrap_content"
         android:text="책 제목"
         android:textSize="20dp"
+        android:layout_gravity="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintHorizontal_bias="0.671"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.784" />
+
+    <!-- 하트 -->
+
+    <!-- 메뉴바 -->
 
     <TextView
         android:id="@+id/writer1"
@@ -111,16 +145,13 @@
         android:layout_height="wrap_content"
         android:text="작가명"
         android:textSize="20dp"
+        android:layout_gravity="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
-
-    <!-- 하트 -->
-
-    <!-- 메뉴바 -->
+        app:layout_constraintVertical_bias="0.456" />
 
     <TextView
         android:id="@+id/writer2"
@@ -128,12 +159,13 @@
         android:layout_height="wrap_content"
         android:text="작가명"
         android:textSize="20dp"
+        android:layout_gravity="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.660"
+        app:layout_constraintHorizontal_bias="0.661"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
+        app:layout_constraintVertical_bias="0.459" />
 
     <TextView
         android:id="@+id/writer3"
@@ -141,9 +173,10 @@
         android:layout_height="wrap_content"
         android:text="작가명"
         android:textSize="20dp"
+        android:layout_gravity="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.827" />
@@ -154,12 +187,13 @@
         android:layout_height="wrap_content"
         android:text="작가명"
         android:textSize="20dp"
+        android:layout_gravity="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintHorizontal_bias="0.661"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828" />
+        app:layout_constraintVertical_bias="0.827" />
 
     <TextView
         android:id="@+id/bookname1"
@@ -167,6 +201,7 @@
         android:layout_height="wrap_content"
         android:text="책 제목"
         android:textSize="20dp"
+        android:layout_gravity="left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
@@ -174,15 +209,87 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.413" />
 
+
+
+    <ImageButton
+        android:id="@+id/heartButton"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_heart_outline"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_heart_filled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.480" />
+
+    <ImageButton
+        android:id="@+id/heartButton2"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_heart_outline"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_heart_filled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833" />
+
+    <ImageButton
+        android:id="@+id/heartButton3"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_heart_outline"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_heart_filled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833" />
+
+    <ImageButton
+        android:id="@+id/heartButton4"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ic_heart_outline"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_heart_filled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.480" />
+
+
+    <TextView
+        android:id="@+id/emptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="찜한 목록이 없습니다."
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
     <View
         android:id="@+id/downbar"
         android:layout_width="415dp"
         android:layout_height="67dp"
+        android:background="@drawable/white_nemo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- 하단 바 이미지 버튼들 -->
 
     <ImageButton
         android:id="@+id/bar_category"
@@ -240,6 +347,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/downbar" />
 
+
     <ImageButton
         android:id="@+id/bar_mypage"
         android:layout_width="50dp"
@@ -254,78 +362,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/downbar" />
 
-    <ImageButton
-        android:id="@+id/heartButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="@drawable/ic_heart_outline"
-        android:scaleType="centerInside"
-        android:src="@drawable/ic_heart_filled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.480" />
-
-    <ImageButton
-        android:id="@+id/heartButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="@drawable/ic_heart_outline"
-        android:scaleType="centerInside"
-        android:src="@drawable/ic_heart_filled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
-
-    <ImageButton
-        android:id="@+id/heartButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="@drawable/ic_heart_outline"
-        android:scaleType="centerInside"
-        android:src="@drawable/ic_heart_filled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833" />
-
-    <ImageButton
-        android:id="@+id/heartButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="@drawable/ic_heart_outline"
-        android:scaleType="centerInside"
-        android:src="@drawable/ic_heart_filled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.480" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="찜 목록"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

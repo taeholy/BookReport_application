@@ -17,7 +17,7 @@ import java.net.URL;
 public class WriteDiaryActivity extends Activity {
 
     private String bookTitle; // 책 제목을 받을 변수
-    private static final String SERVER_URL = "http://192.168.33.198/save_diary.php"; // PHP 서버 주소
+    private static final String SERVER_URL = "http://192.168.33.224/save_diary.php"; // PHP 서버 주소
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

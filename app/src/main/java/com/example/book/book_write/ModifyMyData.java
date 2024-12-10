@@ -52,7 +52,7 @@ public class ModifyMyData extends Activity {
         new Thread(() -> {
             try {
                 // 1. 데이터 로드
-                String loadUrl = "http://192.168.33.198/load_data.php?id=" + id;
+                String loadUrl = "http://192.168.33.224/load_data.php?id=" + id;
                 URL url = new URL(loadUrl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");

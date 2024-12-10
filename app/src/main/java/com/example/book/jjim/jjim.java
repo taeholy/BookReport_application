@@ -41,7 +41,7 @@ import java.util.concurrent.Executors;
 
 public class jjim extends AppCompatActivity {
 
-    private static final String PHP_SCRIPT_URL = "http://192.168.33.198/jjim.php";
+    private static final String PHP_SCRIPT_URL = "http://192.168.33.224/jjim.php";
 
     private TextView bookTitle1, bookAuthor1;
     private ImageView bookImage1;
@@ -193,7 +193,7 @@ public class jjim extends AppCompatActivity {
             int status = (int) params[1];
 
             try {
-                URL url = new URL("http://192.168.33.198/update_jjim.php");
+                URL url = new URL("http://192.168.33.224/update_jjim.php");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
                 connection.setDoOutput(true);

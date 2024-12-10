@@ -10,7 +10,7 @@ import java.util.Map;
 public class Edit_userRequest extends StringRequest {
 
     // 서버 URL 설정(php 파일 연동)
-    final static private String URL = "http://192.168.33.198/edit_user.php";
+    final static private String URL = "http://192.168.33.224/edit_user.php";
     private Map<String, String> map;
 
     public Edit_userRequest(String userID, String userPassword, String userName, int userAge, String userGender, Response.Listener<String> listener) {

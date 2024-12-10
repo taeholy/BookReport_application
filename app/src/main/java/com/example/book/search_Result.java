@@ -42,7 +42,7 @@ import java.util.concurrent.Executors;
 
 public class search_Result extends AppCompatActivity {
 
-    private static final String SEARCH_URL = "http://192.168.33.198/search.php?query=";
+    private static final String SEARCH_URL = "http://192.168.33.224/search.php?query=";
 
 
     private EditText editTextSearch;

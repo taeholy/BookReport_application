@@ -43,7 +43,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class HomeActivity extends AppCompatActivity {
-    private static final String PHP_SCRIPT_URL = "http://192.168.33.198/home.php";
+    private static final String PHP_SCRIPT_URL = "http://192.168.33.224/home.php";
 
     private MainBinding binding;
     private int[] images = {R.drawable.advertisement1, R.drawable.advertisement2, R.drawable.advertisement3};

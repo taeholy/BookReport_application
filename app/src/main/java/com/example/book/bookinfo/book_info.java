@@ -219,7 +219,7 @@ public class book_info extends AppCompatActivity {
             int status = (int) params[1];
 
             try {
-                String urlString = "http://192.168.33.198/update_jjim.php";
+                String urlString = "http://192.168.33.224/update_jjim.php";
                 URL url = new URL(urlString);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
@@ -260,7 +260,7 @@ public class book_info extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             String bookId = params[0];
-            String urlString = "http://192.168.33.198/getBookInfo.php?book_id=" + bookId;
+            String urlString = "http://192.168.33.224/getBookInfo.php?book_id=" + bookId;
 
             try {
                 URL url = new URL(urlString);

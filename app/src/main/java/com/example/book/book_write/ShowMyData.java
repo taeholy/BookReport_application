@@ -38,7 +38,7 @@ public class ShowMyData extends Activity {
     String diary_date;
     String diary_title;
     int numberOfData;
-    private static final String SERVER_URL_LOAD = "http://192.168.33.198/load_diary.php";
+    private static final String SERVER_URL_LOAD = "http://192.168.33.224/load_diary.php";
     private static final String SERVER_URL_DELETE = "http://192.168.33.198/delete_diary.php";
 
     @Override
