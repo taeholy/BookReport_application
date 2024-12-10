@@ -7,6 +7,7 @@
 
     <supports-screens android:largeScreens="true" android:anyDensity="true"/>
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
         android:name="com.example.book.api.GlobalApplication"
         android:allowBackup="true"
@@ -82,7 +83,6 @@
         <activity android:name=".mypage.ChatBOT" android:exported="true"/>
         <activity android:name=".mypage.gogaksenter" android:exported="true"/>
         <activity android:name=".mypage.Sangdam1n1" android:exported="true"/>
-        <activity android:name=".mypage.Sangdam" android:exported="true"/>
         <activity android:name=".mypage.Naeyoung" android:exported="true"/>
         <activity android:name=".mypage.QA" android:exported="true"/>
         <activity android:name=".mypage.QA_In" android:exported="true"/>
@@ -92,5 +92,9 @@
         <activity android:name=".bookinfo.book_info2"/>
         <activity android:name=".bookinfo.book_info3"/>
         <activity android:name=".api.GlobalApplication"/>
+        <activity android:name=".review" />
+        <receiver android:name=".mypage.serjung_dum1"/>
+        <receiver android:name=".mypage.serjung_dum2"/>
+
     </application>
 </manifest>

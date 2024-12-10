@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 24-11-12 07:03
+-- 생성 시간: 24-12-03 06:44
 -- 서버 버전: 10.4.32-MariaDB
 -- PHP 버전: 8.2.12
 
@@ -163,7 +163,7 @@ INSERT INTO `book` (`title`, `author`, `genre`, `book_id`, `jjim`) VALUES
 ('작별하지 않는다', '한강', '소설', 'NOV_1', 0),
 ('모순', '양귀자', '소설', 'NOV_10', 0),
 ('면도날', '서머싯 몸', '소설', 'NOV_11', 0),
-('싯다르타', '헤르만 헤세', '소설', 'NOV_12', 0),
+('싯다르타', '헤르만 헤세', '소설', 'NOV_12', 1),
 ('데미안', '헤르만 헤세', '소설', 'NOV_13', 0),
 ('인간 실격', '다자이 오사무', '소설', 'NOV_14', 0),
 ('흐르는 강물처럼', '셀리 리드', '소설', 'NOV_15', 0),
@@ -279,24 +279,36 @@ CREATE TABLE `diarytb` (
 --
 
 INSERT INTO `diarytb` (`diary_id`, `diary_title`, `diary_date`, `diary_content`) VALUES
-(22, '면도날', '3434', 'jonna gamdong\nagain i can read \nfucking so good'),
-(23, '싯다르타', '3543', 'ho shit da re ta\nDding zack\n'),
-(25, '343', '233322', 'fewf ewf ewfew'),
-(26, '', '', ''),
-(27, '작별하지 않는다', '', ''),
-(28, '', '', ''),
-(29, '작별하지 않는다', '', '');
+(31, '누가 내 머리에 똥 쌌어?', '1119', '두더지가 해가 떴나 안떴나 보려고 땅 위로 고개를 쑥 내밀었는데 갑자기 두더지의 머리에 똥이 떨어졌어요.화가 난 두더지는 자기 머리 위에 싼 똥의 주인을 찿아 동물 친구들을 만나며 그 친구들의 똥을 하나하나 확인 했지요.그러다가 똥을 먹고 있는 파리를 만나 자기 머리 위의 똥이 정육점집 개 뚱뚱이 한스의 똥이라는 것을 알고 한스의 집 위로 올라가 작고 까만 곶감씨 같은 똥을 한스의 이마에 떨어 뜨리고는 그제서야 기분좋게 웃으며 땅 속으로 사라졌대요.두더지의 기분 좋은 복수죠.너무 귀여워요'),
+(32, '작별하지 않는다', '', '');
 
 -- --------------------------------------------------------
 
 --
--- 테이블 구조 `jjim`
+-- 테이블 구조 `reviews`
 --
 
-CREATE TABLE `jjim` (
-  `book_id` varchar(50) NOT NULL,
-  `jjim` varchar(50) NOT NULL
+CREATE TABLE `reviews` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `review` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+
+--
+-- 테이블의 덤프 데이터 `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `title`, `review`, `created_at`) VALUES
+(1, '작별하지 않는다', 'good', '2024-11-26 06:51:47'),
+(2, '작별하지 않는다', 'holy', '2024-11-26 06:51:52'),
+(3, '작별하지 않는다', 'good', '2024-11-26 06:52:49'),
+(4, '작별하지 않는다', 'dfdf', '2024-11-26 07:07:43'),
+(5, '작별하지 않는다', 'dfdfdfdfdf', '2024-11-26 07:07:46'),
+(7, '데미안', 'daebak', '2024-11-26 07:55:08'),
+(8, '데미안', 'dfdfdf', '2024-11-26 07:57:48'),
+(10, '불편한 편의점', 'dfdfdfefefdcd', '2024-11-26 08:00:20'),
+(11, '불편한 편의점', 'efefdfdfefef', '2024-11-26 08:00:22');
 
 -- --------------------------------------------------------
 
@@ -319,10 +331,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`userID`, `userPassword`, `userName`, `userAge`, `userGender`) VALUES
 ('12', '12', '121', 2, '여자'),
 ('123', '123', 'rr', 123, '남자'),
+('555', '555', 'wew', 55, '남자'),
 ('ddd', '123', 'tt123132', 99, '여자'),
 ('hi', '1234', 'rdd', 12, '남자'),
 ('jj', '777', 'jj', 9, '남자'),
-('rlawodms', 'wodms2002', 'wodms', 23, '여자'),
 ('ssd', '123', 'taeho', 23, '남자');
 
 --
@@ -342,10 +354,10 @@ ALTER TABLE `diarytb`
   ADD PRIMARY KEY (`diary_id`);
 
 --
--- 테이블의 인덱스 `jjim`
+-- 테이블의 인덱스 `reviews`
 --
-ALTER TABLE `jjim`
-  ADD KEY `book_id` (`book_id`);
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- 테이블의 인덱스 `users`
@@ -361,17 +373,13 @@ ALTER TABLE `users`
 -- 테이블의 AUTO_INCREMENT `diarytb`
 --
 ALTER TABLE `diarytb`
-  MODIFY `diary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `diary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- 덤프된 테이블의 제약사항
+-- 테이블의 AUTO_INCREMENT `reviews`
 --
-
---
--- 테이블의 제약사항 `jjim`
---
-ALTER TABLE `jjim`
-  ADD CONSTRAINT `book_id` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`);
+ALTER TABLE `reviews`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

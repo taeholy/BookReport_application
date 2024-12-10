@@ -6,6 +6,21 @@
     android:background="@color/white"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/titlebookname2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="운영시간안내"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
+
     <View
         android:id="@+id/view2"
         android:layout_width="412dp"
@@ -18,7 +33,7 @@
         android:id="@+id/titlebookname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="고객센터"
+        android:text="1대1 상담센터"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -29,6 +44,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.032" />
 
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -36,93 +52,51 @@
         android:background="#A1000011"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
-
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="194dp"
-        android:layout_height="66dp"
-        android:rotation="90"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276"
-        app:srcCompat="@drawable/line" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1대1 문의"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.184" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="194dp"
-        android:layout_height="43dp"
-        android:text="1대1 문의 조회"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.293" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="400dp"
-        android:layout_height="60dp"
-        android:text="사업자 주소: 수원특례시 태평34동 신구 빌딩 3F\n
-번호:010-1111-22222"
-        android:textSize="20dp"
+        android:layout_width="396dp"
+        android:layout_height="57dp"
+        android:text="접수시간 20시간 접수 가능 \n 답변시간 평일 10:00 ~ 18:00(토-일, 공휴일 휴무)"
+        android:textColor="@color/black"
+        android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
-
+        app:layout_constraintVertical_bias="0.221" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#F5F5DC"
-        android:text="바로가기"
-        android:textColor="@android:color/black"
+        android:layout_width="392dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#000000"
+        android:text="1대1 문의하기"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.27" />
+        app:layout_constraintVertical_bias="0.344" />
 
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#F5F5DC"
-        android:text="바로가기"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.816"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
+        tools:listitem="@layout/message_item" />
+
 
     <ImageButton
         android:id="@+id/back_botton"
@@ -138,4 +112,26 @@
         app:layout_constraintVertical_bias="0.030">
 
     </ImageButton>
+    <TextView
+        android:id="@+id/notice_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="문의하신 내역은 총 0건입니다."
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/notice_count"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

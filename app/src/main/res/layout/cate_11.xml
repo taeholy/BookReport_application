@@ -183,14 +183,14 @@
             <TextView
                 android:id="@+id/teenager"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="64dp"
                 android:layout_rowWeight="1"
                 android:background="@drawable/edge"
                 android:text="성장"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="28dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </GridLayout>
     </TableLayout>
 
@@ -872,16 +872,15 @@
     </ScrollView>
 
 
-    <!-- 하단 바 이미지 버튼들 -->
     <View
         android:id="@+id/downbar"
         android:layout_width="415dp"
         android:layout_height="67dp"
-        android:background="@drawable/white_nemo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- 하단 바 이미지 버튼들 -->
     <ImageButton
         android:id="@+id/bar_category"
         android:layout_width="50dp"
@@ -937,7 +936,6 @@
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/downbar" />
-
 
     <ImageButton
         android:id="@+id/bar_mypage"

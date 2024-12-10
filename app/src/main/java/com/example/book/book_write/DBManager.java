@@ -7,7 +7,11 @@ import java.net.URLEncoder;
 
 public class DBManager {
 
+<<<<<<< HEAD
     private static final String SERVER_URL = "http://192.168.33.224/save_diary.php";
+=======
+    private static final String SERVER_URL = "http://192.168.33.198/save_diary.php";
+>>>>>>> 18ba15fb91e92b71360c675712fb20461f02d0e4
 
     public void saveDiary(String diaryTitle, String diaryDate, String diaryContent) {
         try {

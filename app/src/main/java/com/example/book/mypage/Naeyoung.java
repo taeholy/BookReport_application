@@ -2,11 +2,9 @@ package com.example.book.mypage;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.book.R;
 
 public class Naeyoung extends AppCompatActivity {
@@ -24,21 +22,14 @@ public class Naeyoung extends AppCompatActivity {
         String inquiryContent = getIntent().getStringExtra("INQUIRY_CONTENT");
         if (inquiryContent != null) {
             String[] lines = inquiryContent.split("\n", 2);
-            inquiryTitleTextView.setText(lines[0]);
+            inquiryTitleTextView.setText(lines[0]); // 첫 줄은 제목
             if (lines.length > 1) {
-                inquiryContentTextView.setText(lines[1]);
+                inquiryContentTextView.setText(lines[1]); // 둘째 줄은 내용
             } else {
-                inquiryContentTextView.setText("");
+                inquiryContentTextView.setText(""); // 내용이 없을 경우 빈 값
             }
         }
 
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Naeyoung.this, Sangdam.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        backButton.setOnClickListener(v -> finish()); // 뒤로가기
     }
 }

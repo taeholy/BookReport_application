@@ -1,204 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".mypage.QA">
 
-    <!-- 뒤로가기-->
+    <!-- 상단 뒤로가기 바 -->
     <View
         android:id="@+id/view2"
-        android:layout_width="412dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp"
         android:background="#f4EEDD"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 뒤로가기 버튼 -->
+
+    <!-- 공지사항 제목 -->
+
+    <!-- 공지사항 수 표시 -->
 
     <ImageButton
         android:id="@+id/back_botton"
         android:layout_width="31dp"
         android:layout_height="39dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/back_icon"
         android:backgroundTint="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.030">
+        app:layout_constraintTop_toTopOf="@id/view2" />
 
-    </ImageButton>
+
+
+    <!-- 공지사항 리스트 -->
 
     <TextView
         android:id="@+id/titlebookname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="공지사항"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.032" />
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toEndOf="@id/back_botton"
+        app:layout_constraintTop_toTopOf="@id/view2" />
 
-    <TableLayout
-
-        android:id="@+id/tableLayout"
-        android:layout_width="413dp"
+    <TextView
+        android:id="@+id/notice_count"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#f4EEDD"
+        android:layout_marginTop="16dp"
+        android:text="총 0건의 공지사항이 있습니다."
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view2" />
+
+
+    <TextView
+        android:id="@+id/comic"
+        android:layout_width="357dp"
+        android:layout_height="35dp"
+        android:text="10/5 업데이트 내역"
+        android:textColor="#000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.209" />
+
+    <TextView
+        android:id="@+id/comi2"
+        android:layout_width="391dp"
+        android:layout_height="32dp"
+        android:text="9/28 업데이트 내역"
+        android:textColor="#000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.301" />
+
+    <TextView
+        android:id="@+id/comi3"
+        android:layout_width="391dp"
+        android:layout_height="31dp"
+        android:text="9/14 업데이트 내역"
+        android:textColor="#000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.395" />
+
+    <TextView
+        android:id="@+id/comi4"
+        android:layout_width="376dp"
+        android:layout_height="29dp"
+        android:text="9/8 업데이트 내역"
+        android:textColor="#000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.482" />
+
+    <TextView
+        android:id="@+id/comi5"
+        android:layout_width="381dp"
+        android:layout_height="31dp"
+        android:text="8/28 업데이트 내역"
+        android:textColor="#000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:background="#A1000011"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:background="#A1000011"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619">
+        app:layout_constraintVertical_bias="0.262" />
 
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#F5DCB7">
+    <View
+        android:id="@+id/view4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:background="#A1000011"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.349" />
 
+    <View
+        android:id="@+id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:background="#A1000011"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.434" />
 
-            <TextView
-                android:id="@+id/comic"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   10/5 업데이트 내역                          >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
+    <View
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:background="#A1000011"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
 
-            <TextView
-                android:id="@+id/education"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="2"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   9/28 업데이트 내역                          >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
+    <View
+        android:id="@+id/view7"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:background="#A1000011"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617" />
 
-            <TextView
-                android:id="@+id/poem"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="3"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   9/21 업데이트 내역                          >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
+    <View
+        android:id="@+id/view8"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:background="#A1000011"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.694" />
 
-            <TextView
-                android:id="@+id/cook"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="4"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   9/14 업데이트 내역                          >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
+    <View
+        android:id="@+id/view9"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="20dp"
+        android:background="#A1000011"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.791" />
 
-            <TextView
-                android:id="@+id/health"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="5"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   9/7 업데이트 내역                            >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
+    <TextView
+        android:id="@+id/comi6"
+        android:layout_width="349dp"
+        android:layout_height="32dp"
+        android:text="8/21 업데이트 내역"
+        android:textColor="#000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
 
-            <TextView
-                android:id="@+id/hobby"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="6"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   8/31 업데이트 내역                          >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/religion"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="7"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   8/24 업데이트 내역                          >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/science"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="8"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   8/17 업데이트 내역                          >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/magazine"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="8"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   8/10 업데이트 내역                          >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/teenager"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="9"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   8/3 업데이트 내역                            >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/teenager1"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="10"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   8/3 업데이트 내역                            >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/teenager2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_row="11"
-                android:layout_column="0"
-                android:background="@drawable/edge"
-                android:text="   8/3 업데이트 내역                            >"
-                android:textColor="#000000"
-                android:textSize="25dp" />
-
-
-        </GridLayout>
-    </TableLayout>
-
+    <TextView
+        android:id="@+id/comi7"
+        android:layout_width="362dp"
+        android:layout_height="30dp"
+        android:text="8/14 업데이트 내역"
+        android:textColor="#000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.737" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
